@@ -74,6 +74,8 @@ Known to be used in our project are:
 - `_.uniq` -> `_.uniqBy`
 
 Other peculiar behaviors:
+- `_.pick(object, predicate)` -> `_.pickBy(object, predicate)`
+- `_.omit(object, predicate)` -> `_.omitBy(object, predicate)`
 - `_.forEach(collection, iteratee, thisArg)` -> `_.forEach(collection, _.bind(iteratee, thisArg))`
 - `_.first(collection, n)` -> `_.take(collection, n)`
 - `_.memoize` ??
