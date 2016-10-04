@@ -70,3 +70,10 @@ Known to be used in our project are:
 - `_.first` -> `_.head`
 - `_.invoke` -> `_.invokeMap`
 - `_.rest` -> `_.tail`
+- `_.max` -> `_.maxBy`
+- `_.uniq` -> `_.uniqBy`
+
+Other peculiar behaviors:
+- `_.forEach(collection, iteratee, thisArg)` -> `_.forEach(collection, _.bind(iteratee, thisArg))`
+- `_.first(collection, n)` -> `_.take(collection, n)`
+- `_.memoize` ??
