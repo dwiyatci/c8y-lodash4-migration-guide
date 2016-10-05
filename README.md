@@ -41,7 +41,7 @@ Here are the two equivalence tables (note that the lists maybe incomplete, I onl
 | `angular.isElement` | `_.isElement` |
 | `angular.isFunction` | `_.isFunction` |
 | `angular.isNumber` | `_.isNumber` |
-| `angular.isObject` | `_.isObject` |
+| `angular.isObject` | `_.isObjectLike` |
 | `angular.isString` | `_.isString` |
 | `angular.isUndefined` | `_.isUndefined` |
 | `angular.merge` | `_.merge` |
@@ -72,10 +72,12 @@ Known to be used in our project are:
 - `_.rest` -> `_.tail`
 - `_.max` -> `_.maxBy`
 - `_.uniq` -> `_.uniqBy`
+- `_.isObject` -> `_.isObjectLike`
 
 Other peculiar behaviors:
 - `_.pick(object, predicate)` -> `_.pickBy(object, predicate)`
 - `_.omit(object, predicate)` -> `_.omitBy(object, predicate)`
 - `_.forEach(collection, iteratee, thisArg)` -> `_.forEach(collection, _.bind(iteratee, thisArg))`
 - `_.first(collection, n)` -> `_.take(collection, n)`
+- `_.forOwn(object, ...)` -> it doesn't skip string object, but instead iterate it as collection of characters
 - `_.memoize` ??
