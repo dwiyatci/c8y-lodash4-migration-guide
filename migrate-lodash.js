@@ -60,7 +60,7 @@ const replacementSpecs = [
   },
   {
     regex: 'angular[.]isObject',
-    replacement: '_.isObject',
+    replacement: '_.isObjectLike',
   },
   {
     regex: 'angular[.]isString',
@@ -129,6 +129,10 @@ const replacementSpecs = [
   {
     regex: '_[.]rest',
     replacement: '_.tail',
+  },
+  {
+    regex: '_[.]isObject',
+    replacement: '_.isObjectLike',
   },
 ];
 
