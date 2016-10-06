@@ -59,7 +59,7 @@ In our code, lodash functional method aliases have been used inconsistently. :di
 | `_.unique` | `_.uniq` |
 | `_.chain` | `_()` (yup, prefer implicit chaining. Also, beware that in implicit chaining, the wrapper [methods that are not chainable](https://lodash.com/docs/4.16.2#lodash) will end the chaining without the need of calling `.value()`, e.g. `.forEach`, `.reduce`) |
 
-## Breaking Changes in 4.x (Method Removals and Renames)
+## Breaking Changes in 4.x (Method Removals, Renames, Split Outs)
 [R.T.F. Changelog](https://github.com/lodash/lodash/wiki/Changelog#v400). :shipit:
 
 Known to be used in our project are:
@@ -80,4 +80,4 @@ Other peculiar behaviors:
 - `_.forEach(collection, iteratee, thisArg)` -> `_.forEach(collection, _.bind(iteratee, thisArg))`
 - `_.first(collection, n)` -> `_.take(collection, n)`
 - `_.forOwn(object, ...)` -> it doesn't skip string object, but instead iterate it as collection of characters
-- `_.memoize` ??
+- Modify the result cache of `_.memoize`'d function: `cache.pebbles.name = 'penelope';` -> `cache.set(pebbles.name, 'penelope');`
